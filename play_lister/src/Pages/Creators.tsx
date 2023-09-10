@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../Components/Nabar'
+import Navbar from '../Components/Navbar'
 import AllUsers from '../Components/AllUsers'
 
 const Creators = () => {

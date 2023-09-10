@@ -17,13 +17,13 @@ const AllUsers = () => {
   console.log(allUsers);
 
   return (
-    <div className="bg-white py-8 sm:py-8 ">
+    <div className="bg-gray-600 py-8 sm:py-8 ">
       <div className="mx-auto  max-w-7xl gap-x-20 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
         <div className="max-w-2xl mx-auto mb-20">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Meet our content creators
           </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
+          <p className="mt-6 text-lg leading-8 text-gray-100">
             the driving force behind the videos you love. They bring their
             unique talents and creativity to every upload, shaping the app into
             a vibrant and dynamic community."
@@ -44,10 +44,10 @@ const AllUsers = () => {
                       alt="img"
                     />
                     <div className="text-left">
-                      <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">
+                      <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-100">
                         {elem.creator.name}
                       </h3>
-                      <p className="text-sm font-semibold leading-6 text-indigo-600">
+                      <p className="text-sm font-semibold leading-6 text-indigo-300">
                         {index % 4 == 0
                           ? "Bloger"
                           : index % 3 == 0
@@ -64,7 +64,7 @@ const AllUsers = () => {
           <img
             src="https://icon-library.com/images/loading-icon-animated-gif/loading-icon-animated-gif-19.jpg"
             alt="Loading"
-            className="w-60  mx-auto"
+            className="opacity-20 w-60  mx-auto"
           ></img>
         )}
       </div>

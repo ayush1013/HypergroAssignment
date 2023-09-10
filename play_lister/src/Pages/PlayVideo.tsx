@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import Navbar from "../Components/Nabar";
+import Navbar from "../Components/Navbar";
 import { fetchALlData, getData, productType } from "../Data/getData";
 import { useParams } from "react-router-dom";
 import VideoComponent from "../Components/VideoComponent";
@@ -85,7 +85,7 @@ const PlayVideo = () => {
                   alt="Like"
                   className="w-6 h-6 mr-2"
                 />
-                <p className={like ? "text-indigo-600" : "text:black"}>
+                <p className={like ? "text-indigo-300" : "text-gray-100"}>
                   {like
                     ? videoData[0].reaction.count + 1
                     : videoData[0].reaction.count}
@@ -93,7 +93,7 @@ const PlayVideo = () => {
                 </p>
               </div>
               <div>
-                <p>{comment} Comments</p>
+                <p className="text-gray-100">{comment} Comments</p>
               </div>
             </div>
 

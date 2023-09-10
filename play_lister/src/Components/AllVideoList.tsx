@@ -10,7 +10,7 @@ const AllVideoList: React.FC<elementType> = ({ elem }) => {
   return (
     <div
       key={elem.postId}
-      className="rounded-2xl bg-white shadow-md p-2  mx-auto w-[80%] mb-4 h-[auto] sm:h-[200px] lg:h-[200px]"
+      className="bg-gray-400 rounded-2xl bg-white shadow-md p-2  mx-auto w-[80%] mb-4 h-[auto] sm:h-[200px] lg:h-[200px]"
     >
         <div className="relative overflow-hidden w-full h-auto lg:h-[100px] sm:h-[100px]">
           <img
@@ -30,10 +30,10 @@ const AllVideoList: React.FC<elementType> = ({ elem }) => {
           <img className="w-12 " src={elem.creator.pic} alt="img" />
         </div>
         <div className="text-left w-full ml-2 ">
-          <p className="font-bold overflow-hidden h-[20px]">
+          <p className="text-gray-900 font-bold overflow-hidden h-[20px]">
             {elem.creator.name ? elem.creator.name : "User"}
           </p>
-          <p className="overflow-hidden h-[50px] ">
+          <p className="text-gray-900 overflow-hidden h-[50px] ">
             When Your GF is Way Too Beautiful 🤣
           </p>
         </div>

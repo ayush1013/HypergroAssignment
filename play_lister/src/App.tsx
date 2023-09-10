@@ -9,7 +9,7 @@ function App() {
   },[])
 
   return (
-    <div className="App ">
+    <div className="App bg-gray-600 ">
       <AllRoutes/>
     </div>
   );

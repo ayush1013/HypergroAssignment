@@ -32,16 +32,16 @@ const PlayOne: React.FC<PlayOneProps> = ({
   }, [activeVideo, elem.postId, id]);
 
   return (
-    <div className="w-full">
+    <div className="w-full  ">
       <div className="flex mb-2">
         <div className="w-12 h-10 mt-2 rounded-full overflow-hidden">
           <img className="w-12 " src={elem.creator.pic} alt="img" />
         </div>
         <div className="text-left w-full ml-2 ">
-          <p className="font-bold">
+          <p className=" text-gray-900 font-bold">
             {elem.creator.name ? elem.creator.name : "User"}
           </p>
-          <p>When Your GF is Way Too Beautiful 🤣</p>
+          <p className="text-gray-900">When Your GF is Way Too Beautiful 🤣</p>
         </div>
       </div>
       <video

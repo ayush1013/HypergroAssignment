@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchALlData, productType } from "../Data/getData";
-import Navbar from "../Components/Nabar";
+import Navbar from "../Components/Navbar";
 import PlayOne from "../Components/PlayOne";
 
 const AllVideos = () => {
@@ -26,7 +26,7 @@ const AllVideos = () => {
           {allVideos?.map((elem) => (
             <div
               key={elem.postId}
-              className="rounded-2xl bg-white shadow-md p-2 mx-auto w-full mb-10 cursor-pointer "
+              className="bg-gray-400 rounded-2xl bg-white shadow-md p-2 mx-auto w-full mb-10 cursor-pointer "
             >
               <PlayOne
                 elem={elem}

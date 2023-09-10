@@ -3,7 +3,7 @@ import { fetchALlData, getData, productType } from "../Data/getData";
 import { type } from "@testing-library/user-event/dist/type";
 import VideoComponent from "../Components/VideoComponent";
 import Pagination from "../Components/Pagination";
-import Navbar from "../Components/Nabar";
+import Navbar from "../Components/Navbar";
 import VideoList from "../Components/VideoList";
 import {useParams} from "react-router-dom"
 
