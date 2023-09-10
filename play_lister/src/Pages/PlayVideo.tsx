@@ -44,6 +44,7 @@ const PlayVideo = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     setCommentArr([""]);
     setTextOfComment("")
+    setLike(false)
   };
   //   console.log("Text is", textOfComment);
 
