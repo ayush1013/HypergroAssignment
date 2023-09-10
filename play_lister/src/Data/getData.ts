@@ -19,3 +19,29 @@ export type productType = {
       title: string;
     };
   };
+
+
+  export const fetchALlData = async ():Promise<productType[]> => {
+    let page = 0;
+    let allVideos: productType[] = [];
+
+    while (true) {
+      const response = await fetch(
+        `https://internship-service.onrender.com/videos?page=${page}`
+      );
+      const data = await response.json();
+      // console.log(data.data);
+      let posts = data.data.posts;
+
+      if (posts.length === 0) {
+        break; // No more data, exit loop
+      }
+
+      allVideos = [...allVideos, ...posts];
+      page++;
+    }
+    
+    localStorage.setItem("allData", JSON.stringify(allVideos));
+
+    return allVideos
+  };

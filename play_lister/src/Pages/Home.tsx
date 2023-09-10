@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { getData, productType } from "../Data/getData";
 import { type } from "@testing-library/user-event/dist/type";
-import ReactPlayer from "react-player";
-import VideoComponent from "./VideoComponent";
-import Pagination from "./Pagination";
+import VideoComponent from "../Components/VideoComponent";
+import Pagination from "../Components/Pagination";
+import Navbar from "../Components/Nabar";
+import VideoList from "../Components/VideoList";
+
+// const initialPage = JSON.parse(localStorage.getItem("page") || "" )
 
 const Home = () => {
   const [data, setData] = useState<productType[]>([]);
   const [activeVideo, setActiveVideo] = useState<string>("");
-  const [page, setPage] = useState<number>(1);
+  const [page, setPage] = useState<number>(0);
 
   const handlePage = (num: number) => {
     setPage((prev) => prev + num);
+    localStorage.setItem("page", JSON.stringify(page));
   };
 
   const handlePlay = (id: string) => {
@@ -33,26 +37,26 @@ const Home = () => {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">Home Page</h1>
-      <div className="grid grid-cols-1 mx-left w-1/4 mx-auto">
-        {data.length > 0 &&
-          data?.map((elem) => (
-            <div
-              key={elem.postId}
-              className="rounded-2xl bg-white shadow-md p-2 mx-auto w-full mb-10 "
-            >
-              <VideoComponent
-                elem={elem}
-                handlePlay={handlePlay}
-                activeVideo={activeVideo}
-                setActiveVideo={setActiveVideo}
-              />
-            </div>
+      <Navbar />
+      {data.length > 0 ? (
+        <div className="grid mt-8 grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4 mx-auto">
+          {data?.map((elem) => (
+            <VideoList elem={elem}/>
           ))}
-      </div>
+        </div>
+      ) : (
+        <img
+          src="https://icon-library.com/images/loading-icon-animated-gif/loading-icon-animated-gif-19.jpg"
+          alt="Loading"
+          className=" opacity-50 w-[300px] mx-auto"
+        ></img>
+      )}
       <Pagination handlePage={handlePage} page={page} />
     </div>
   );
 };
 
 export default Home;
+
+
+
